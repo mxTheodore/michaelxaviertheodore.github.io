@@ -6,34 +6,35 @@
   <title>Music | Michael Xavier Theodore</title>
   <style>
     body {
-      font-family: 'Times New Roman', serif;
-      background: #111;
-      color: #f5f5f5;
+      font-family: "Times New Roman", serif;
+      background-color: #111;
+      color: #f0f0f0;
       max-width: 800px;
       margin: 3em auto;
       padding: 1em;
-      line-height: 1.6;
+      line-height: 1.7;
     }
     h1 {
       font-size: 2.2em;
       text-align: center;
       font-variant: small-caps;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5em;
+      letter-spacing: 0.08em;
     }
     nav {
+      margin-bottom: 2em;
       text-align: center;
-      margin-bottom: 2.5em;
     }
     nav a {
-      margin: 0 1.2em;
+      margin: 0 1em;
+      font-weight: bold;
+      color: #dddddd;
       text-decoration: none;
-      color: #ccc;
       font-variant: small-caps;
+      letter-spacing: 0.05em;
       font-size: 1.25em;
     }
     nav a:hover {
-      color: #fff;
+      color: #ffffff;
     }
     .track {
       margin-bottom: 3em;
@@ -48,37 +49,42 @@
   </style>
 </head>
 <body>
-  <h1>Music</h1>
+
+  <!-- INCLUDE HEADER -->
+  <!--#include virtual="/includes/header.html" -->
+  <!-- Or manually paste the contents of header.html here if no SSI -->
+
+  <h1><span style="font-variant: small-caps;">Music</span></h1>
   <nav>
     <a href="/">Home</a>
     <a href="/lucidism/">Lucidism</a>
     <a href="/works/">Works</a>
-    <a href="/ledger/">Ledger</a>
     <a href="/music/">Music</a>
-    <a href="#">Contact</a>
+    <a href="/ledger/">Ledger</a>
+    <a href="/contact/">Contact</a>
   </nav>
 
   <div class="track">
-  <p class="track-info">"Reality" – John E, 2021</p>
-  <audio controls>
-    <source src="Reality.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-</div>
+    <p class="track-info">"Reality" – John E, 2021</p>
+    <audio controls>
+      <source src="Reality.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
 
   <div class="track">
-  <p class="track-info">"Damn Nation" – John E, 2022</p>
-  <audio controls>
-    <source src="Damn-Nation.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-</div>
+    <p class="track-info">"Damn Nation" – John E, 2022</p>
+    <audio controls>
+      <source src="Damn-Nation.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
 
   <div class="track">
     <p class="track-info">"Bad Dreams" – Brassau, 2017</p>
-    <audio controls class="audio">
-  <source src="Bad-Dreams.mp3" type="audio/mpeg">
-</audio>
+    <audio controls>
+      <source src="Bad-Dreams.mp3" type="audio/mpeg">
+    </audio>
   </div>
 
   <div class="track">
@@ -90,40 +96,33 @@
   </div>
 
   <div class="track">
-  <p class="track-info">"Falling Out" – Brassau, 2017</p>
-  <audio controls>
-    <source src="falling-out.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-</div>
+    <p class="track-info">"Falling Out" – Brassau, 2017</p>
+    <audio controls>
+      <source src="falling-out.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- INCLUDE FOOTER (if needed) -->
+  <!--#include virtual="/includes/footer.html" -->
 
   <script>
-  // Get all audio elements on the page
-  const audioPlayers = document.querySelectorAll('audio');
-
-  audioPlayers.forEach(player => {
-    player.addEventListener('play', () => {
-      audioPlayers.forEach(otherPlayer => {
-        if (otherPlayer !== player) {
-          otherPlayer.pause();
-        }
+    const audioPlayers = document.querySelectorAll('audio');
+    audioPlayers.forEach(player => {
+      player.addEventListener('play', () => {
+        audioPlayers.forEach(other => {
+          if (other !== player) other.pause();
+        });
       });
     });
-  });
-</script>
 
-  <script>
-  const players = document.querySelectorAll('audio');
-
-  players.forEach((player, index) => {
-    player.addEventListener('ended', () => {
-      const next = players[index + 1];
-      if (next) {
-        next.play();
-      }
+    const players = document.querySelectorAll('audio');
+    players.forEach((player, index) => {
+      player.addEventListener('ended', () => {
+        const next = players[index + 1];
+        if (next) next.play();
+      });
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
