@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | Michael Xavier Theodore</title>
   <style>
     body {
@@ -12,8 +12,8 @@
       max-width: 800px;
       margin: 3em auto;
       padding: 1em;
-      line-height: 1.6;
-      font-size: 0.95em;
+      line-height: 1.7;
+      font-size: 0.95em; /* intentional: slightly smaller as requested */
     }
     h1 {
       font-size: 2.2em;
@@ -22,18 +22,27 @@
       letter-spacing: 0.08em;
     }
     nav {
+      margin-bottom: 2em;
       text-align: center;
-      margin-bottom: 2.5em;
     }
     nav a {
-      color: #ccc;
       margin: 0 1em;
+      font-weight: bold;
+      color: #dddddd;
       text-decoration: none;
       font-variant: small-caps;
-      font-weight: bold;
+      letter-spacing: 0.05em;
+      font-size: 1.25em;
     }
     nav a:hover {
-      color: white;
+      color: #ffffff;
+    }
+    a {
+      color: #a3d2ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
     p {
       text-align: center;
@@ -42,7 +51,7 @@
   </style>
 </head>
 <body>
-  <h1>Contact</h1>
+  <h1><span style="font-variant: small-caps;">Contact</span></h1>
   <nav>
     <a href="/">Home</a>
     <a href="/lucidism/">Lucidism</a>
@@ -51,6 +60,7 @@
     <a href="/ledger/">Ledger</a>
     <a href="/contact/">Contact</a>
   </nav>
+
   <p>If you have a reason to reach out, you may do so via email:</p>
   <p>mxtheodore [at] tutanota [dot] com</p>
   <p>Please note: unsolicited messages may not receive a reply.</p>
